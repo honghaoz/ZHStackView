@@ -1,0 +1,434 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		FA367BA819F17A6C00AC58D0 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA367BA719F17A6C00AC58D0 /* AppDelegate.swift */; };
+		FA367BAA19F17A6C00AC58D0 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA367BA919F17A6C00AC58D0 /* ViewController.swift */; };
+		FA367BAD19F17A6C00AC58D0 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FA367BAB19F17A6C00AC58D0 /* Main.storyboard */; };
+		FA367BAF19F17A6C00AC58D0 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FA367BAE19F17A6C00AC58D0 /* Images.xcassets */; };
+		FA367BB219F17A6C00AC58D0 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = FA367BB019F17A6C00AC58D0 /* LaunchScreen.xib */; };
+		FA367BBE19F17A6C00AC58D0 /* ZHStackViewDemoTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA367BBD19F17A6C00AC58D0 /* ZHStackViewDemoTests.swift */; };
+		FA367BC919F17A7400AC58D0 /* ZHStackView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA367BC819F17A7400AC58D0 /* ZHStackView.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		FA367BB819F17A6C00AC58D0 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = FA367B9A19F17A6C00AC58D0 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = FA367BA119F17A6C00AC58D0;
+			remoteInfo = ZHStackViewDemo;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		FA367BA219F17A6C00AC58D0 /* ZHStackViewDemo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ZHStackViewDemo.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		FA367BA619F17A6C00AC58D0 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		FA367BA719F17A6C00AC58D0 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		FA367BA919F17A6C00AC58D0 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		FA367BAC19F17A6C00AC58D0 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		FA367BAE19F17A6C00AC58D0 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
+		FA367BB119F17A6C00AC58D0 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
+		FA367BB719F17A6C00AC58D0 /* ZHStackViewDemoTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ZHStackViewDemoTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		FA367BBC19F17A6C00AC58D0 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		FA367BBD19F17A6C00AC58D0 /* ZHStackViewDemoTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ZHStackViewDemoTests.swift; sourceTree = "<group>"; };
+		FA367BC819F17A7400AC58D0 /* ZHStackView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ZHStackView.swift; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		FA367B9F19F17A6C00AC58D0 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		FA367BB419F17A6C00AC58D0 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		FA367B9919F17A6C00AC58D0 = {
+			isa = PBXGroup;
+			children = (
+				FA367BA419F17A6C00AC58D0 /* ZHStackViewDemo */,
+				FA367BBA19F17A6C00AC58D0 /* ZHStackViewDemoTests */,
+				FA367BA319F17A6C00AC58D0 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		FA367BA319F17A6C00AC58D0 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				FA367BA219F17A6C00AC58D0 /* ZHStackViewDemo.app */,
+				FA367BB719F17A6C00AC58D0 /* ZHStackViewDemoTests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		FA367BA419F17A6C00AC58D0 /* ZHStackViewDemo */ = {
+			isa = PBXGroup;
+			children = (
+				FA367BC719F17A7400AC58D0 /* ZHStackView */,
+				FA367BA719F17A6C00AC58D0 /* AppDelegate.swift */,
+				FA367BA919F17A6C00AC58D0 /* ViewController.swift */,
+				FA367BAB19F17A6C00AC58D0 /* Main.storyboard */,
+				FA367BAE19F17A6C00AC58D0 /* Images.xcassets */,
+				FA367BB019F17A6C00AC58D0 /* LaunchScreen.xib */,
+				FA367BA519F17A6C00AC58D0 /* Supporting Files */,
+			);
+			path = ZHStackViewDemo;
+			sourceTree = "<group>";
+		};
+		FA367BA519F17A6C00AC58D0 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				FA367BA619F17A6C00AC58D0 /* Info.plist */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		FA367BBA19F17A6C00AC58D0 /* ZHStackViewDemoTests */ = {
+			isa = PBXGroup;
+			children = (
+				FA367BBD19F17A6C00AC58D0 /* ZHStackViewDemoTests.swift */,
+				FA367BBB19F17A6C00AC58D0 /* Supporting Files */,
+			);
+			path = ZHStackViewDemoTests;
+			sourceTree = "<group>";
+		};
+		FA367BBB19F17A6C00AC58D0 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				FA367BBC19F17A6C00AC58D0 /* Info.plist */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		FA367BC719F17A7400AC58D0 /* ZHStackView */ = {
+			isa = PBXGroup;
+			children = (
+				FA367BC819F17A7400AC58D0 /* ZHStackView.swift */,
+			);
+			path = ZHStackView;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		FA367BA119F17A6C00AC58D0 /* ZHStackViewDemo */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = FA367BC119F17A6C00AC58D0 /* Build configuration list for PBXNativeTarget "ZHStackViewDemo" */;
+			buildPhases = (
+				FA367B9E19F17A6C00AC58D0 /* Sources */,
+				FA367B9F19F17A6C00AC58D0 /* Frameworks */,
+				FA367BA019F17A6C00AC58D0 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = ZHStackViewDemo;
+			productName = ZHStackViewDemo;
+			productReference = FA367BA219F17A6C00AC58D0 /* ZHStackViewDemo.app */;
+			productType = "com.apple.product-type.application";
+		};
+		FA367BB619F17A6C00AC58D0 /* ZHStackViewDemoTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = FA367BC419F17A6C00AC58D0 /* Build configuration list for PBXNativeTarget "ZHStackViewDemoTests" */;
+			buildPhases = (
+				FA367BB319F17A6C00AC58D0 /* Sources */,
+				FA367BB419F17A6C00AC58D0 /* Frameworks */,
+				FA367BB519F17A6C00AC58D0 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				FA367BB919F17A6C00AC58D0 /* PBXTargetDependency */,
+			);
+			name = ZHStackViewDemoTests;
+			productName = ZHStackViewDemoTests;
+			productReference = FA367BB719F17A6C00AC58D0 /* ZHStackViewDemoTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		FA367B9A19F17A6C00AC58D0 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0600;
+				ORGANIZATIONNAME = HonghaoZ;
+				TargetAttributes = {
+					FA367BA119F17A6C00AC58D0 = {
+						CreatedOnToolsVersion = 6.0.1;
+					};
+					FA367BB619F17A6C00AC58D0 = {
+						CreatedOnToolsVersion = 6.0.1;
+						TestTargetID = FA367BA119F17A6C00AC58D0;
+					};
+				};
+			};
+			buildConfigurationList = FA367B9D19F17A6C00AC58D0 /* Build configuration list for PBXProject "ZHStackViewDemo" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = FA367B9919F17A6C00AC58D0;
+			productRefGroup = FA367BA319F17A6C00AC58D0 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				FA367BA119F17A6C00AC58D0 /* ZHStackViewDemo */,
+				FA367BB619F17A6C00AC58D0 /* ZHStackViewDemoTests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		FA367BA019F17A6C00AC58D0 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				FA367BAD19F17A6C00AC58D0 /* Main.storyboard in Resources */,
+				FA367BB219F17A6C00AC58D0 /* LaunchScreen.xib in Resources */,
+				FA367BAF19F17A6C00AC58D0 /* Images.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		FA367BB519F17A6C00AC58D0 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		FA367B9E19F17A6C00AC58D0 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				FA367BC919F17A7400AC58D0 /* ZHStackView.swift in Sources */,
+				FA367BAA19F17A6C00AC58D0 /* ViewController.swift in Sources */,
+				FA367BA819F17A6C00AC58D0 /* AppDelegate.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		FA367BB319F17A6C00AC58D0 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				FA367BBE19F17A6C00AC58D0 /* ZHStackViewDemoTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		FA367BB919F17A6C00AC58D0 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = FA367BA119F17A6C00AC58D0 /* ZHStackViewDemo */;
+			targetProxy = FA367BB819F17A6C00AC58D0 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		FA367BAB19F17A6C00AC58D0 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				FA367BAC19F17A6C00AC58D0 /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		FA367BB019F17A6C00AC58D0 /* LaunchScreen.xib */ = {
+			isa = PBXVariantGroup;
+			children = (
+				FA367BB119F17A6C00AC58D0 /* Base */,
+			);
+			name = LaunchScreen.xib;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		FA367BBF19F17A6C00AC58D0 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		FA367BC019F17A6C00AC58D0 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = YES;
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		FA367BC219F17A6C00AC58D0 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				INFOPLIST_FILE = ZHStackViewDemo/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Debug;
+		};
+		FA367BC319F17A6C00AC58D0 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				INFOPLIST_FILE = ZHStackViewDemo/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Release;
+		};
+		FA367BC519F17A6C00AC58D0 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(inherited)",
+				);
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				INFOPLIST_FILE = ZHStackViewDemoTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/ZHStackViewDemo.app/ZHStackViewDemo";
+			};
+			name = Debug;
+		};
+		FA367BC619F17A6C00AC58D0 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(inherited)",
+				);
+				INFOPLIST_FILE = ZHStackViewDemoTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/ZHStackViewDemo.app/ZHStackViewDemo";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		FA367B9D19F17A6C00AC58D0 /* Build configuration list for PBXProject "ZHStackViewDemo" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				FA367BBF19F17A6C00AC58D0 /* Debug */,
+				FA367BC019F17A6C00AC58D0 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		FA367BC119F17A6C00AC58D0 /* Build configuration list for PBXNativeTarget "ZHStackViewDemo" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				FA367BC219F17A6C00AC58D0 /* Debug */,
+				FA367BC319F17A6C00AC58D0 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+		FA367BC419F17A6C00AC58D0 /* Build configuration list for PBXNativeTarget "ZHStackViewDemoTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				FA367BC519F17A6C00AC58D0 /* Debug */,
+				FA367BC619F17A6C00AC58D0 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = FA367B9A19F17A6C00AC58D0 /* Project object */;
+}
