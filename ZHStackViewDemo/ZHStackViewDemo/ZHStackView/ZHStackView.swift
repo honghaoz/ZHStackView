@@ -51,11 +51,16 @@ class ZHStackView: UIView {
         case Vertical
         case Horizontal
     }
+    
+    enum ViewAlignment: Int {
+        case Left, Center, Right
+    }
 
     private var width: CGFloat = 0.0
     private var height: CGFloat = 0.0
     
     var orientation: LayoutOrientation = LayoutOrientation.Vertical
+    var alignment: ViewAlignment = ViewAlignment.Center
     var containerInset: UIEdgeInsets = UIEdgeInsetsZero
     var defaultSpacing: CGFloat = 5.0
     
@@ -77,8 +82,8 @@ class ZHStackView: UIView {
         self.setUpViews([])
     }
     
-    init(views: [UIView], viewInsets: [UIEdgeInsets]? = nil, containerInset: UIEdgeInsets? = UIEdgeInsetsZero) {
-        super.init()
+    convenience init(views: [UIView], viewInsets: [UIEdgeInsets]? = nil, containerInset: UIEdgeInsets? = UIEdgeInsetsZero) {
+        self.init()
         self.setUpViews(views, viewInsets: viewInsets, containerInset: containerInset)
     }
     
@@ -140,13 +145,17 @@ class ZHStackView: UIView {
         for cellIndex: Int in 0 ..< self.cellViews.count {
             var currentCell = self.cellViews[cellIndex]
             
-            // Align views to left
-            currentCell.frame = CGRectMake(max(currentCell.inset.left, self.containerInset.left), currentOriginY, currentCell.bounds.size.width, currentCell.bounds.size.height)
-            
-            // TODO:
-            // Align views to center
-            
-            // Align views to right
+            switch self.alignment {
+            case .Left:
+                // Align views to left
+                currentCell.frame = CGRectMake(max(currentCell.inset.left, self.containerInset.left), currentOriginY, currentCell.bounds.size.width, currentCell.bounds.size.height)
+            case .Center:
+                // Align views to center
+                currentCell.frame = CGRectMake((self.width - currentCell.bounds.size.width) / 2.0, currentOriginY, currentCell.bounds.size.width, currentCell.bounds.size.height)
+            case .Right:
+                // Align views to right
+                currentCell.frame = CGRectMake((self.width - max(currentCell.inset.right, self.containerInset.right) - currentCell.bounds.size.width), currentOriginY, currentCell.bounds.size.width, currentCell.bounds.size.height)
+            }
             
             self.addSubview(currentCell)
             currentOriginY += currentCell.bounds.size.height
