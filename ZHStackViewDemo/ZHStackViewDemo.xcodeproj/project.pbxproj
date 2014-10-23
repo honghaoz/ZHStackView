@@ -14,8 +14,6 @@
 		FA367BB219F17A6C00AC58D0 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = FA367BB019F17A6C00AC58D0 /* LaunchScreen.xib */; };
 		FA367BBE19F17A6C00AC58D0 /* ZHStackViewDemoTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA367BBD19F17A6C00AC58D0 /* ZHStackViewDemoTests.swift */; };
 		FA367BC919F17A7400AC58D0 /* ZHStackView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA367BC819F17A7400AC58D0 /* ZHStackView.swift */; };
-		FA8C572319F94F2B00A4ECC0 /* FrameViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA8C572219F94F2B00A4ECC0 /* FrameViewController.swift */; };
-		FA8C572519F94F3D00A4ECC0 /* AutolayoutViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA8C572419F94F3D00A4ECC0 /* AutolayoutViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -40,8 +38,6 @@
 		FA367BBC19F17A6C00AC58D0 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		FA367BBD19F17A6C00AC58D0 /* ZHStackViewDemoTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ZHStackViewDemoTests.swift; sourceTree = "<group>"; };
 		FA367BC819F17A7400AC58D0 /* ZHStackView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ZHStackView.swift; sourceTree = "<group>"; };
-		FA8C572219F94F2B00A4ECC0 /* FrameViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FrameViewController.swift; sourceTree = "<group>"; };
-		FA8C572419F94F3D00A4ECC0 /* AutolayoutViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AutolayoutViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -87,8 +83,6 @@
 				FA367BA719F17A6C00AC58D0 /* AppDelegate.swift */,
 				FA367BA919F17A6C00AC58D0 /* ViewController.swift */,
 				FA367BAB19F17A6C00AC58D0 /* Main.storyboard */,
-				FA8C572219F94F2B00A4ECC0 /* FrameViewController.swift */,
-				FA8C572419F94F3D00A4ECC0 /* AutolayoutViewController.swift */,
 				FA367BAE19F17A6C00AC58D0 /* Images.xcassets */,
 				FA367BB019F17A6C00AC58D0 /* LaunchScreen.xib */,
 				FA367BA519F17A6C00AC58D0 /* Supporting Files */,
@@ -231,9 +225,7 @@
 			files = (
 				FA367BC919F17A7400AC58D0 /* ZHStackView.swift in Sources */,
 				FA367BAA19F17A6C00AC58D0 /* ViewController.swift in Sources */,
-				FA8C572319F94F2B00A4ECC0 /* FrameViewController.swift in Sources */,
 				FA367BA819F17A6C00AC58D0 /* AppDelegate.swift in Sources */,
-				FA8C572519F94F3D00A4ECC0 /* AutolayoutViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

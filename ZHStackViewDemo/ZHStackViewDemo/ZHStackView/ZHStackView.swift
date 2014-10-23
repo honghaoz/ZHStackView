@@ -24,6 +24,7 @@ class CellView: UIView {
         super.init()
         self.bounds = view.bounds
         view.frame = CGRectMake(0, 0, view.bounds.size.width, view.bounds.size.height)
+        view.setTranslatesAutoresizingMaskIntoConstraints(true)
         self.addSubview(view)
         self.inset = inset == nil ? UIEdgeInsetsZero : inset!
     }
@@ -89,7 +90,7 @@ class ZHStackView: UIView {
     
     func setUpViews(views: [UIView], viewInsets: [UIEdgeInsets]? = nil, containerInset: UIEdgeInsets? = UIEdgeInsetsZero) {
         if views.count == 0 {
-            self.frame = CGRectZero
+            self.frame = CGRectMake(self.frame.origin.x, self.frame.origin.y, containerInset!.left + containerInset!.right, containerInset!.top + containerInset!.bottom)
             return
         } else if let realInsets = viewInsets {
             // If insets is provided, count must equal to views.count
@@ -113,6 +114,7 @@ class ZHStackView: UIView {
         self.width = 0.0
         self.height = 0.0
         self.cellViews.removeAll(keepCapacity: false)
+        
         if self.rawViewInsets != nil && self.rawViewInsets!.count != self.rawViews.count {
             NSException(name: "Views count and insets count inconsistent", reason: "Count of views must equal to count of insets", userInfo: nil).raise()
         }
