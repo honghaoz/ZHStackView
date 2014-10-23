@@ -116,6 +116,26 @@
                                                     <action selector="alignmentSegChanged:" destination="BYZ-38-t0r" eventType="valueChanged" id="Fw6-Rg-GeI"/>
                                                 </connections>
                                             </segmentedControl>
+                                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Top" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="kYq-B6-3Lp">
+                                                <rect key="frame" x="73" y="65" width="40" height="30"/>
+                                                <fontDescription key="fontDescription" name="HelveticaNeue-Light" family="Helvetica Neue" pointSize="14"/>
+                                                <textInputTraits key="textInputTraits"/>
+                                            </textField>
+                                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Left" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="sNj-rr-hyK">
+                                                <rect key="frame" x="25" y="86" width="40" height="30"/>
+                                                <fontDescription key="fontDescription" name="HelveticaNeue-Light" family="Helvetica Neue" pointSize="14"/>
+                                                <textInputTraits key="textInputTraits"/>
+                                            </textField>
+                                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Bottom" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="TAu-CK-W4R">
+                                                <rect key="frame" x="73" y="109" width="40" height="30"/>
+                                                <fontDescription key="fontDescription" name="HelveticaNeue-Light" family="Helvetica Neue" pointSize="14"/>
+                                                <textInputTraits key="textInputTraits"/>
+                                            </textField>
+                                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Right" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Ijv-OR-LX5">
+                                                <rect key="frame" x="121" y="86" width="40" height="30"/>
+                                                <fontDescription key="fontDescription" name="HelveticaNeue-Light" family="Helvetica Neue" pointSize="14"/>
+                                                <textInputTraits key="textInputTraits"/>
+                                            </textField>
                                         </subviews>
                                     </view>
                                     <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="4qC-SF-3Oi">
@@ -124,6 +144,9 @@
                                         <state key="normal" title="Refresh">
                                             <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                         </state>
+                                        <connections>
+                                            <action selector="refreshViews:" destination="BYZ-38-t0r" eventType="touchUpInside" id="seQ-1n-5ya"/>
+                                        </connections>
                                     </button>
                                 </subviews>
                                 <color key="backgroundColor" white="0.95422453703703702" alpha="1" colorSpace="calibratedWhite"/>
@@ -142,14 +165,14 @@
                                 </constraints>
                             </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Mhn-Hw-Kh0" userLabel="SeparatorLine">
-                                <rect key="frame" x="0.0" y="290" width="375" height="2"/>
+                                <rect key="frame" x="0.0" y="290" width="375" height="5"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="2" id="ltB-LT-qJ9"/>
+                                    <constraint firstAttribute="height" constant="5" id="ltB-LT-qJ9"/>
                                 </constraints>
                             </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="m61-Lc-SIa">
-                                <rect key="frame" x="0.0" y="292" width="375" height="375"/>
+                                <rect key="frame" x="0.0" y="295" width="375" height="372"/>
                             </view>
                         </subviews>
                         <color key="backgroundColor" white="0.95422453699999998" alpha="1" colorSpace="calibratedWhite"/>
