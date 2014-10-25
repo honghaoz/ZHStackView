@@ -38,6 +38,7 @@ class ViewController: UIViewController {
         self.alignmentSegChanged(alignmentSeg)
         
 //        containerInset = UIEdgeInsetsMake(10, 20, 30, 20)
+        stackedView.defaultSpacing = 0.0
         self.newViewInContainer()
         self.random(nil)
     }

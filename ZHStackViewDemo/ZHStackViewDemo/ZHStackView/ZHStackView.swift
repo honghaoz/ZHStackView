@@ -66,7 +66,7 @@ class ZHStackView: UIView {
     var orientation: Orientation = .Vertical
     var alignment: Alignment = .Center
     var containerInset: UIEdgeInsets = UIEdgeInsetsZero
-    var defaultSpacing: CGFloat = 5.0
+    var defaultSpacing: CGFloat = 0.0
     
     // raw-prefix variables are temporarily use only
     var rawViews: [UIView] = []
