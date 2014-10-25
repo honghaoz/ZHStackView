@@ -62,7 +62,7 @@
                                                     <action selector="refresh:" destination="BYZ-38-t0r" eventType="touchUpInside" id="txx-pE-8zS"/>
                                                 </connections>
                                             </button>
-                                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Index" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="l8f-RF-Pu1">
+                                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="0" borderStyle="roundedRect" placeholder="Index" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="l8f-RF-Pu1">
                                                 <rect key="frame" x="126" y="25" width="52" height="25"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="25" id="w4X-xC-0c2"/>
@@ -149,7 +149,7 @@
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="qyw-Fh-pB2" userLabel="NewView">
                                         <rect key="frame" x="0.0" y="120" width="375" height="150"/>
                                         <subviews>
-                                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Top" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="2FR-9Z-tjs">
+                                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="0" borderStyle="roundedRect" placeholder="Top" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="2FR-9Z-tjs">
                                                 <rect key="frame" x="167" y="0.0" width="42" height="25"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="25" id="25M-XK-Uex"/>
@@ -172,7 +172,7 @@
                                                     </mask>
                                                 </variation>
                                             </view>
-                                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Left" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Fmm-Wv-zLl">
+                                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="0" borderStyle="roundedRect" placeholder="Left" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Fmm-Wv-zLl">
                                                 <rect key="frame" x="0.0" y="63" width="42" height="25"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="25" id="EPL-zh-u4S"/>
@@ -189,7 +189,7 @@
                                                     <outlet property="delegate" destination="BYZ-38-t0r" id="I7j-9x-RO0"/>
                                                 </connections>
                                             </textField>
-                                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Bottom" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="yUr-Dx-4gN">
+                                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="0" borderStyle="roundedRect" placeholder="Bottom" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="yUr-Dx-4gN">
                                                 <rect key="frame" x="156" y="125" width="63" height="25"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="25" id="T33-HB-Gco"/>
@@ -200,7 +200,7 @@
                                                     <outlet property="delegate" destination="BYZ-38-t0r" id="gfh-9r-u4c"/>
                                                 </connections>
                                             </textField>
-                                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Right" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="BE9-TN-L5e">
+                                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="0" borderStyle="roundedRect" placeholder="Right" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="BE9-TN-L5e">
                                                 <rect key="frame" x="324" y="63" width="51" height="25"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="25" id="nXc-af-Rwe"/>
@@ -275,6 +275,7 @@
                             </view>
                         </subviews>
                         <color key="backgroundColor" white="0.95422453699999998" alpha="1" colorSpace="calibratedWhite"/>
+                        <gestureRecognizers/>
                         <constraints>
                             <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="m61-Lc-SIa" secondAttribute="bottom" id="5f7-q5-atw"/>
                             <constraint firstAttribute="centerX" secondItem="Mhn-Hw-Kh0" secondAttribute="centerX" id="9S1-gT-vPp"/>
@@ -287,6 +288,9 @@
                             <constraint firstAttribute="width" secondItem="l7V-UN-Wxe" secondAttribute="width" id="j2K-5N-hlR"/>
                             <constraint firstItem="m61-Lc-SIa" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="sEt-2j-L6f"/>
                         </constraints>
+                        <connections>
+                            <outletCollection property="gestureRecognizers" destination="dYq-s8-oQB" appends="YES" id="P5r-mt-tTa"/>
+                        </connections>
                     </view>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
                     <connections>
@@ -303,6 +307,11 @@
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+                <tapGestureRecognizer id="dYq-s8-oQB">
+                    <connections>
+                        <action selector="viewTapped:" destination="BYZ-38-t0r" id="Ex7-vx-Vjz"/>
+                    </connections>
+                </tapGestureRecognizer>
             </objects>
             <point key="canvasLocation" x="608.5" y="395.5"/>
         </scene>

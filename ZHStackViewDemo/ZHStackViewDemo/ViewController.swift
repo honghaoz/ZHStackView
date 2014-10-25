@@ -25,6 +25,7 @@ class ViewController: UIViewController {
     
     var newView: UIView!
     var sampleViews = [UIView]()
+    var containerInset = UIEdgeInsetsZero
     
     @IBOutlet weak var alignmentSeg: UISegmentedControl!
     
@@ -33,9 +34,10 @@ class ViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         stackedView.backgroundColor = UIColor(white: 1.0, alpha: 1.0)
-        alignmentSeg.selectedSegmentIndex = 1;
+        alignmentSeg.selectedSegmentIndex = 0;
         self.alignmentSegChanged(alignmentSeg)
         
+//        containerInset = UIEdgeInsetsMake(10, 20, 30, 20)
         self.newViewInContainer()
         self.random(nil)
     }
@@ -51,9 +53,8 @@ class ViewController: UIViewController {
         }
         sampleViews.append(self.newRandomView())
         
-        stackedView.setUpViews(sampleViews, viewInsets: nil, containerInset: UIEdgeInsetsMake(10, 20, 30, 20))
-        stackedView.frame = CGRectMake((self.presentView.bounds.size.width - stackedView.bounds.size.width) / 2.0, 10, stackedView.bounds.size.width, stackedView.bounds.size.height)
-        self.presentView.addSubview(stackedView)
+        stackedView.setUpViews(sampleViews, viewInsets: nil, containerInset: containerInset)
+        centerStackView()
     }
     
     @IBAction func refresh(sender: AnyObject) {
@@ -62,24 +63,34 @@ class ViewController: UIViewController {
     }
     
     @IBAction func append(sender: AnyObject) {
+        stackedView.append(newView, viewInset: getViewInset())
+        newViewInContainer()
+        centerStackView()
     }
     
     @IBAction func insert(sender: AnyObject) {
+        let index: Int = indexField.text.toInt()!
+        stackedView.insert(newView, viewInset: getViewInset(), atIndex: index)
+        newViewInContainer()
+        centerStackView()
     }
 
     @IBAction func remove(sender: AnyObject) {
+        let index: Int = indexField.text.toInt()!
+        stackedView.removeAtIndex(index)
+        centerStackView()
     }
     
     @IBAction func alignmentSegChanged(sender: AnyObject) {
         switch alignmentSeg.selectedSegmentIndex {
         case 0:
-            stackedView.alignment = ZHViewAlignment.Left
+            stackedView.alignment = .Left
         case 1:
-            stackedView.alignment = ZHViewAlignment.Center
+            stackedView.alignment = .Center
         case 2:
-            stackedView.alignment = ZHViewAlignment.Right
+            stackedView.alignment = .Right
         default:
-            stackedView.alignment = ZHViewAlignment.Center
+            stackedView.alignment = .Center
         }
         stackedView.relayoutAllViews(animated: true)
     }
@@ -95,6 +106,23 @@ class ViewController: UIViewController {
         var newView = UIView(frame: CGRectMake(0, 0, CGFloat(arc4random_uniform(UInt32(newViewContainer.bounds.size.width))), CGFloat(arc4random_uniform(UInt32(newViewContainer.bounds.size.height)))))
         newView.backgroundColor = randomColor()
         return newView
+    }
+    
+    func centerStackView() {
+        self.presentView.addSubview(stackedView)
+        stackedView.frame = CGRectMake((self.presentView.bounds.size.width - stackedView.bounds.size.width) / 2.0, 10, stackedView.bounds.size.width, stackedView.bounds.size.height)
+    }
+    
+    @IBAction func viewTapped(sender: AnyObject) {
+        indexField.resignFirstResponder()
+        viewTop.resignFirstResponder()
+        viewLeft.resignFirstResponder()
+        viewBottom.resignFirstResponder()
+        viewRight.resignFirstResponder()
+    }
+    
+    func getViewInset() -> UIEdgeInsets {
+        return UIEdgeInsetsMake(CGFloat(viewTop.text.toInt()!), CGFloat(viewLeft.text.toInt()!), CGFloat(viewBottom.text.toInt()!), CGFloat(viewRight.text.toInt()!))
     }
 }
 

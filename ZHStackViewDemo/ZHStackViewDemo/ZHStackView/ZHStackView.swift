@@ -49,32 +49,35 @@ class CellView: UIView {
     }
 }
 
-// Stack
-enum ZHLayoutOrientation: Int {
-    case Vertical
-    case Horizontal
-}
-
-enum ZHViewAlignment: Int {
-    case Left, Center, Right
-}
-
 class ZHStackView: UIView {
+    
+    enum Orientation: Int {
+        case Vertical
+        case Horizontal
+    }
+    
+    enum Alignment: Int {
+        case Left, Center, Right
+    }
     
     private var width: CGFloat = 0.0
     private var height: CGFloat = 0.0
     
-    var orientation: ZHLayoutOrientation = ZHLayoutOrientation.Vertical
-    var alignment: ZHViewAlignment = ZHViewAlignment.Center
+    var orientation: Orientation = .Vertical
+    var alignment: Alignment = .Center
     var containerInset: UIEdgeInsets = UIEdgeInsetsZero
     var defaultSpacing: CGFloat = 5.0
     
+    // raw-prefix variables are temporarily use only
     var rawViews: [UIView] = []
     var rawViewInsets: [UIEdgeInsets]?
+    
+    // Maintain view informations
     var cellViews: [CellView] = []
+    var count: Int {return cellViews.count}
     
     // Property flag whether some subViews removed or new views added
-    var viewsHaveChanges: (have: Bool, removes: [Int]?, adds: [Int]?) = (true, nil, nil)
+    var viewsHaveChanges: (have: Bool, removes: [Int]? , adds: [Int]?) = (true, nil, nil)
     
     required init(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)
@@ -117,6 +120,79 @@ class ZHStackView: UIView {
         self.relayoutAllViews(animated: false)
     }
     
+    func append(view: UIView, viewInset: UIEdgeInsets? = nil) {
+        self.insert(view, viewInset: viewInset, atIndex: count)
+    }
+    
+    func insert(view: UIView, viewInset: UIEdgeInsets? = nil, atIndex: Int) {
+        if 0 <= atIndex && atIndex <= count {
+            // Create new cell
+            var newViewInset = viewInset
+            if newViewInset == nil {
+                newViewInset = UIEdgeInsetsMake(defaultSpacing, 0, defaultSpacing, 0)
+            }
+            var newCellView = CellView(view: view, inset: newViewInset)
+            cellViews.insert(newCellView, atIndex: atIndex)
+            
+            // Add to subview
+            var newCellWidth = max(newCellView.inset.left, containerInset.left) + newCellView.bounds.size.width + max(newCellView.inset.right, containerInset.right)
+            if newCellWidth > self.width {self.width = newCellWidth}
+            self.relayoutAllViews(animated: true)
+        }
+        else
+        {
+            print("ZHStackView: try to insert view at an invalid index")
+        }
+    }
+    
+    func removeLast() {
+        self.removeAtIndex(count - 1)
+    }
+    
+    func removeAtIndex(index: Int) {
+        if 0 <= index && index < count {
+            let removedCellView = cellViews.removeAtIndex(index)
+            removedCellView.removeFromSuperview()
+            self.updateWidth()
+            self.relayoutAllViews(animated: true)
+        }
+        else
+        {
+            print("ZHStackView: try to remove view at an invalid index")
+        }
+    }
+    
+    func updateCellViews() {
+        if self.rawViewInsets != nil && self.rawViewInsets!.count != self.rawViews.count {
+            NSException(name: "Views count and insets count inconsistent", reason: "Count of views must equal to count of insets", userInfo: nil).raise()
+        }
+        
+        // Construt cellViews
+        for index: Int in 0 ..< self.rawViews.count {
+            var eachView: UIView = self.rawViews[index]
+            var eachInset: UIEdgeInsets? = self.rawViewInsets?[index]
+            if eachInset == nil {
+                eachInset = UIEdgeInsetsMake(defaultSpacing, 0, defaultSpacing, 0)
+            }
+            self.cellViews.append(CellView(view: eachView, inset: eachInset))
+        }
+    }
+    
+    func updateWidth() {
+        // Keep record max widths
+        var maxLeftInset: CGFloat = self.containerInset.left
+        var maxRightInset: CGFloat = self.containerInset.right
+        var maxViewWidth: CGFloat = 0.0
+        
+        // Construt cellViews
+        for eachCellView in cellViews {
+            if maxLeftInset < eachCellView.inset.left {maxLeftInset = eachCellView.inset.left}
+            if maxRightInset < eachCellView.inset.right {maxRightInset = eachCellView.inset.right}
+            if maxViewWidth < eachCellView.bounds.size.width {maxViewWidth = eachCellView.bounds.size.width}
+        }
+        self.width = maxLeftInset + maxViewWidth + maxRightInset
+    }
+    
     func reset() {
         self.width = 0.0
         self.height = 0.0
@@ -131,32 +207,8 @@ class ZHStackView: UIView {
         if self.viewsHaveChanges.have {
             self.reset()
             
-            if self.rawViewInsets != nil && self.rawViewInsets!.count != self.rawViews.count {
-                NSException(name: "Views count and insets count inconsistent", reason: "Count of views must equal to count of insets", userInfo: nil).raise()
-            }
-            
-            // Keep record max widths
-            var maxLeftInset: CGFloat = self.containerInset.left
-            var maxRightInset: CGFloat = self.containerInset.right
-            var maxViewWidth: CGFloat = 0.0
-            
-            // Construt cellViews
-            for index: Int in 0 ..< self.rawViews.count {
-                var eachView: UIView = self.rawViews[index]
-                var eachInset: UIEdgeInsets? = self.rawViewInsets?[index]
-                if eachInset == nil {
-                    eachInset = UIEdgeInsetsMake(self.defaultSpacing, 0, self.defaultSpacing, 0)
-                }
-                var newCellView = CellView(view: eachView, inset: eachInset)
-                
-                if maxLeftInset < newCellView.inset.left {maxLeftInset = newCellView.inset.left}
-                if maxRightInset < newCellView.inset.right {maxRightInset = newCellView.inset.right}
-                if maxViewWidth < newCellView.bounds.size.width {maxViewWidth = newCellView.bounds.size.width}
-                
-                self.cellViews.append(newCellView)
-            }
-            
-            self.width = maxLeftInset + maxViewWidth + maxRightInset
+            self.updateCellViews()
+            self.updateWidth()
         }
         
         var currentOriginY: CGFloat = self.containerInset.top
@@ -193,7 +245,7 @@ class ZHStackView: UIView {
                 }
                 
                 self.height = currentOriginY
-                self.bounds = CGRectMake(0, 0, self.width, self.height)
+                self.frame = CGRectMake(self.frame.origin.x, self.frame.origin.y, self.width, self.height)
         }, completion: nil)
         
         // Reset
