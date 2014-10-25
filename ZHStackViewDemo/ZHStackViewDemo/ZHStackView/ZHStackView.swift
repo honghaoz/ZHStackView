@@ -49,6 +49,7 @@ class CellView: UIView {
     }
 }
 
+// Stack
 enum ZHLayoutOrientation: Int {
     case Vertical
     case Horizontal

@@ -12,14 +12,18 @@ class ViewController: UIViewController {
     
     var stackedView: ZHStackView = ZHStackView()
     
+    @IBOutlet weak var indexField: UITextField!
+    @IBOutlet weak var newViewContainer: UIView!
+    
+    @IBOutlet weak var viewTop: UITextField!
+    @IBOutlet weak var viewLeft: UITextField!
+    @IBOutlet weak var viewBottom: UITextField!
+    @IBOutlet weak var viewRight: UITextField!
+    
     @IBOutlet weak var sampleViewsContainer: UIView!
     @IBOutlet weak var viewsTypeSeg: UISegmentedControl!
-    @IBOutlet weak var view1: UIView!
-    @IBOutlet weak var view2: UIView!
-    @IBOutlet weak var view3: UIVisualEffectView!
-    @IBOutlet weak var view4: UITextField!
-    @IBOutlet weak var view5: UIView!
     
+    var newView: UIView!
     var sampleViews = [UIView]()
     
     @IBOutlet weak var alignmentSeg: UISegmentedControl!
@@ -28,30 +32,44 @@ class ViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        var newView = UIView(frame: CGRectMake(0, 0, CGFloat(arc4random_uniform(UInt32(300))), CGFloat(arc4random_uniform(UInt32(100)))))
-        newView.backgroundColor = UIColor.blueColor()
         stackedView.backgroundColor = UIColor(white: 1.0, alpha: 1.0)
-        
-        sampleViews = [copyOfView(view1), copyOfView(view2), copyOfView(view3), copyOfView(view4), copyOfView(view5), newView]
-        stackedView.setUpViews(sampleViews, viewInsets: nil, containerInset: UIEdgeInsetsMake(10, 20, 30, 20))
-        
         alignmentSeg.selectedSegmentIndex = 1;
         self.alignmentSegChanged(alignmentSeg)
         
-        stackedView.frame = CGRectMake((self.presentView.bounds.size.width - stackedView.bounds.size.width) / 2.0, 10, stackedView.bounds.size.width, stackedView.bounds.size.height)
-        self.presentView.addSubview(stackedView)
+        self.newViewInContainer()
+        self.random(nil)
     }
     
     // MARK: - Actions
     
-    @IBAction func refreshViews(sender: AnyObject) {
-        view1.backgroundColor = UIColor(red: random(255) / 255.0, green: random(255) / 225.0, blue: random(255) / 255.0, alpha: 0.9)
-        view2.backgroundColor = UIColor(red: random(255) / 255.0, green: random(255) / 225.0, blue: random(255) / 255.0, alpha: 0.9)
-        view5.backgroundColor = UIColor(red: random(255) / 255.0, green: random(255) / 225.0, blue: random(255) / 255.0, alpha: 0.9)
-        sampleViews = [copyOfView(view1), copyOfView(view2), copyOfView(view3), copyOfView(view4), copyOfView(view5)]
-        stackedView.setUpViews(sampleViews, viewInsets: nil, containerInset: UIEdgeInsetsMake(10, 5, 5, 5))
+    @IBAction func random(sender: AnyObject!) {
+        stackedView.reset()
+        sampleViews = []
+        
+        for _ in 0 ..< Int(arc4random_uniform(UInt32(5))) {
+            sampleViews.append(self.newRandomView())
+        }
+        sampleViews.append(self.newRandomView())
+        
+        stackedView.setUpViews(sampleViews, viewInsets: nil, containerInset: UIEdgeInsetsMake(10, 20, 30, 20))
+        stackedView.frame = CGRectMake((self.presentView.bounds.size.width - stackedView.bounds.size.width) / 2.0, 10, stackedView.bounds.size.width, stackedView.bounds.size.height)
+        self.presentView.addSubview(stackedView)
     }
+    
+    @IBAction func refresh(sender: AnyObject) {
+        newView.removeFromSuperview()
+        self.newViewInContainer()
+    }
+    
+    @IBAction func append(sender: AnyObject) {
+    }
+    
+    @IBAction func insert(sender: AnyObject) {
+    }
+
+    @IBAction func remove(sender: AnyObject) {
+    }
+    
     @IBAction func alignmentSegChanged(sender: AnyObject) {
         switch alignmentSeg.selectedSegmentIndex {
         case 0:
@@ -65,6 +83,19 @@ class ViewController: UIViewController {
         }
         stackedView.relayoutAllViews(animated: true)
     }
+    
+    func newViewInContainer() {
+        newView = newRandomView()
+        
+        newView.frame = CGRectMake((newViewContainer.bounds.size.width - newView.bounds.size.width) / 2.0, (newViewContainer.bounds.size.height - newView.bounds.size.height) / 2.0, newView.bounds.size.width, newView.bounds.size.height)
+        newViewContainer.addSubview(newView)
+    }
+    
+    func newRandomView() -> UIView {
+        var newView = UIView(frame: CGRectMake(0, 0, CGFloat(arc4random_uniform(UInt32(newViewContainer.bounds.size.width))), CGFloat(arc4random_uniform(UInt32(newViewContainer.bounds.size.height)))))
+        newView.backgroundColor = randomColor()
+        return newView
+    }
 }
 
 // MARK: - Helpers
@@ -76,5 +107,9 @@ func copyOfView(view: UIView) -> UIView {
 
 func random(range: Int) -> CGFloat {
     return CGFloat(arc4random_uniform(UInt32(range)))
+}
+
+func randomColor() -> UIColor {
+    return UIColor(red: random(255) / 255.0, green: random(255) / 225.0, blue: random(255) / 255.0, alpha: 0.9)
 }
 
