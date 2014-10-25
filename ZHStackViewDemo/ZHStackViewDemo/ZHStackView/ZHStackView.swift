@@ -145,6 +145,11 @@ class ZHStackView: UIView {
         }
     }
     
+    func removeAll() {
+        self.reset()
+        self.relayoutAllViews(animated: true)
+    }
+    
     func removeLast() {
         self.removeAtIndex(count - 1)
     }
