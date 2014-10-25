@@ -2,6 +2,8 @@
 
 ZHStackView is a simple container view that can hold any UIViews and stack them vertically, you can append, insert and remove a view at any index.It's a kind of simplified UITableView.
 
+![](https://raw.githubusercontent.com/honghaoz/ZHStackView/master/Previews/1.png)
+
 ## Purpose
 We already have UITableView and even more powerful UICollectionView, why do we need this ZHStackView?
 
@@ -11,6 +13,7 @@ What I want is just give me an array of UIViews and I give you well managed cont
 
 ## Preview:
 http://youtu.be/1j6_NHcXKT8
+http://youtu.be/X-5Ou6Yagds
 
 ## Usage
 1: Initialize a stackView
@@ -45,3 +48,5 @@ These insets provide a flexiable way for you to layout views on stackView
 3: There is a property `var defaultSpacing: CGFloat`, this is a easier way to set spacing between views
 
 4: More and more, will implement `orientation` property for horizontal layout.
+
+![](https://raw.githubusercontent.com/honghaoz/ZHStackView/master/Previews/2.png)
